@@ -3,17 +3,17 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Nazanin Ghaemi-Zadeh</title>
+  <title>Nazanin Ghaemi-Zadeh | Systems Optimization</title>
   <meta name="author" content="Nazanin Ghaemi-Zadeh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Nazanin Ghaemi-Zadeh - Ph.D. candidate in Systems Optimization at Sharif University of Technology. Research interests: optimization, data-driven decision-making, and AI.">
-  <meta name="keywords" content="Nazanin Ghaemi-Zadeh, Sharif University, Systems Optimization, Data-Driven Decision Making, AI, Operations Research">
+    content="Nazanin Ghaemi-Zadeh - Ph.D. candidate in Systems Optimization at Sharif University of Technology. Research: optimization, data-driven decision-making, and AI.">
+  <meta name="keywords" content="Nazanin Ghaemi-Zadeh, Sharif University, Systems Optimization, Portfolio Optimization, MCDM, Fuzzy Logic">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph tags for social media -->
-  <meta property="og:title" content="Nazanin Ghaemi-Zadeh - Ph.D. Candidate in Systems Optimization">
-  <meta property="og:description" content="Ph.D. candidate in Systems Optimization at Sharif University of Technology. Research on optimization, data-driven decision-making, and AI.">
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Nazanin Ghaemi-Zadeh | Ph.D. Candidate in Systems Optimization">
+  <meta property="og:description" content="Ph.D. candidate in Systems Optimization at Sharif University of Technology.">
   <meta property="og:image" content="https://nazanin-ghaemizadeh.github.io/figures/me.jpg">
   <meta property="og:url" content="https://nazanin-ghaemizadeh.github.io/">
   <meta property="og:type" content="profile">
@@ -28,39 +28,17 @@
   <link rel="stylesheet" type="text/css" href="shared-styles.css">
   <link rel="icon" type="image/png" href="figures/logo.png">
 
-  <!-- Preload critical assets -->
   <link rel="preload" href="figures/me.jpg" as="image">
-  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
-    type="font/woff2" crossorigin>
-
-  <!-- DNS prefetch for external domains -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nazanin Ghaemi-Zadeh",
-    "description": "Ph.D. candidate in Systems Optimization at Sharif University of Technology. Research interests: optimization, data-driven decision-making, and artificial intelligence.",
-    "url": "https://nazanin-ghaemizadeh.github.io/",
-    "image": "https://nazanin-ghaemizadeh.github.io/figures/me.jpg",
-    "email": "nazanin.ghaemizadeh@gmail.com",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Sharif University of Technology",
-      "url": "https://www.sharif.ir/"
-    },
-    "sameAs": [
-      "https://github.com/nazanin-ghaemizadeh",
-      "https://www.linkedin.com/in/nazanin-ghaemizadeh",
-      "https://scholar.google.com/citations?user=YOURID"
-    ]
-  }
-  </script>
-
   <style>
-    /* Homepage-specific styles */
+    /* Justified text for bio paragraphs */
+    .profile-text .bio {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    
     .profile-section {
       display: flex;
       align-items: flex-start;
@@ -86,9 +64,6 @@
       color: #374151;
       line-height: 1.7;
       margin-bottom: 16px;
-    }
-    .profile-text .bio a {
-      font-size: inherit;
     }
     .profile-links a {
       color: var(--primary-color);
@@ -131,25 +106,78 @@
     .news-date {
       font-weight: 600;
       color: #1a1a1a;
-      width: 120px;
+      width: 100px;
       flex-shrink: 0;
     }
-    [data-theme="dark"] .news-list li {
-      color: var(--text-color);
-    }
-    [data-theme="dark"] .news-date {
-      color: var(--text-color);
-    }
-    .homepage-section #projects-list li {
-      margin-bottom: 8px !important;
-    }
-    .homepage-section .publication-list {
+    .publication-list {
       list-style: none !important;
       padding-left: 0 !important;
     }
-    .homepage-section .publication-list li {
-      margin-bottom: 6px !important;
-      padding-bottom: 0 !important;
+    .publication-list li {
+      margin-bottom: 12px !important;
+      padding-bottom: 8px !important;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .publication-list li:last-child {
+      border-bottom: none;
+    }
+    .pub-title {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .pub-authors {
+      font-style: italic;
+      color: #555;
+      font-size: 0.92em;
+    }
+    .pub-venue {
+      font-size: 0.9em;
+      color: #0065C0;
+    }
+    .pub-links {
+      margin-top: 4px;
+      font-size: 0.85em;
+    }
+    .pub-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+    .badge-preprint {
+      background-color: #f09228;
+      color: white;
+      font-size: 0.7em;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 8px;
+      display: inline-block;
+    }
+    .badge-journal {
+      background-color: #0065C0;
+      color: white;
+      font-size: 0.7em;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 8px;
+      display: inline-block;
+    }
+    .badge-chapter {
+      background-color: #2e7d64;
+      color: white;
+      font-size: 0.7em;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 8px;
+      display: inline-block;
+    }
+    .badge-conference {
+      background-color: #8b5cf6;
+      color: white;
+      font-size: 0.7em;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 8px;
+      display: inline-block;
     }
     .view-all {
       display: inline-block;
@@ -158,25 +186,14 @@
       color: var(--primary-color);
       text-decoration: none;
     }
-    .view-all:hover {
-      color: var(--secondary-color);
-    }
-    [data-theme="dark"] .profile-text .name {
-      color: var(--text-color);
-    }
-    [data-theme="dark"] .profile-text .pronunciation {
-      color: #888;
-    }
-    [data-theme="dark"] .profile-text .bio {
-      color: var(--text-color);
-    }
-    [data-theme="dark"] .profile-photo {
-      border-color: #374151;
-    }
-    [data-theme="dark"] .homepage-section h2 {
-      color: var(--text-color);
-      border-bottom-color: #374151;
-    }
+    [data-theme="dark"] .profile-text .name { color: var(--text-color); }
+    [data-theme="dark"] .profile-text .bio { color: var(--text-color); }
+    [data-theme="dark"] .profile-photo { border-color: #374151; }
+    [data-theme="dark"] .homepage-section h2 { color: var(--text-color); border-bottom-color: #374151; }
+    [data-theme="dark"] .pub-title { color: var(--text-color); }
+    [data-theme="dark"] .pub-authors { color: #b8b8b8; }
+    [data-theme="dark"] .publication-list li { border-bottom-color: #374151; }
+
     @media screen and (max-width: 768px) {
       .profile-section {
         flex-direction: column-reverse;
@@ -186,8 +203,17 @@
       .profile-text .name, .profile-text .pronunciation, .profile-links {
         text-align: center;
       }
-      .profile-photo {
-        margin-top: 0;
+      .profile-text .bio {
+        text-align: justify;
+      }
+      .profile-photo { margin-top: 0; }
+      .news-list li {
+        flex-direction: column;
+        margin-bottom: 12px !important;
+      }
+      .news-date {
+        width: auto;
+        font-weight: bold;
       }
     }
   </style>
@@ -206,16 +232,13 @@
         <p class="bio">
           Hi! I am a <strong>Ph.D. candidate in Systems Optimization</strong> at 
           <a href="https://www.sharif.ir/" target="_blank">Sharif University of Technology</a>, 
-          supervised by Prof. 
-          <a href="https://scholar.google.com/citations?user=mVuM_ycAAAAJ&hl=en" target="_blank">Kourosh Eshghi</a>.
+          supervised by Prof. <a href="https://scholar.google.com/citations?user=mVuM_ycAAAAJ&hl=en" target="_blank">Kourosh Eshghi</a>.
         </p>
         
         <p class="bio">
           I received my Master's degree in <strong>Engineering Management</strong> from Sharif University of Technology, 
-          under the supervision of Dr. 
-          <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
-          and the advisory of Dr. 
-          <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.
+          under the supervision of Dr. <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
+          and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.
         </p>
         
         <p class="bio">
@@ -250,31 +273,78 @@
     <div class="homepage-section">
       <h2>News</h2>
       <ul class="news-list">
-        <li><span class="news-date">Mar 2025</span><span>Our paper on "Iterative Intuitionistic Fuzzy Linear Programming for Multi-Objective Portfolio Optimization" will be submitted to <em>European Journal of Operational Research</em>.</span></li>
-        <li><span class="news-date">Feb 2025</span><span>Our paper on "Predicting Obesity Risk with Machine Learning Using NHANES Data" will be submitted to <em>BMJ Evidence-Based Medicine</em>.</span></li>
-        <li><span class="news-date">Sep 2024</span><span>Started M.Sc. at Sharif University of Technology as a second-ranked graduate student in Engineering Management.</span></li>
-        <li><span class="news-date">Jan 2024</span><span>Paper accepted in <em>Expert Systems with Applications</em> (Q1, IF: 8.5) on business strategy evaluation using MCDM techniques.</span></li>
-        <li><span class="news-date">Feb 2023</span><span>Graduated as first-ranked student from Alzahra University with B.Sc. in Industrial Engineering.</span></li>
+        <li><span class="news-date">Mar 2025</span><span>New preprint: "Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy"</span></li>
+        <li><span class="news-date">Jan 2025</span><span>Invited to contribute to Elsevier's <em>Encyclopedia of Multi-Attribute Decision Making</em> (Chapters on IDOCRIW & MULTIMOORA)</span></li>
+        <li><span class="news-date">Sep 2024</span><span>Started Ph.D. in Systems Optimization at Sharif University of Technology</span></li>
+        <li><span class="news-date">Jan 2024</span><span>Paper accepted in <em>Expert Systems with Applications</em> (Q1, IF: 8.5)</span></li>
       </ul>
     </div>
 
-    <!-- Selected Papers (will be populated from data.js) -->
+    <!-- Publications Section (Complete list as requested) -->
     <div class="homepage-section">
-      <h2>Selected Papers</h2>
-      <ul id="selected-papers-list" class="publication-list">
-        <!-- This will be automatically populated by main.js from data.js -->
+      <h2>Publications</h2>
+      <ul class="publication-list">
+        
+        <!-- Preprint -->
+        <li>
+          <div class="pub-title">Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach <span class="badge-preprint">Preprint</span></div>
+          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, Habibi, M., & Seifbarghy, M. (2026)</div>
+          <div class="pub-links"><a href="#">[Preprint]</a> <a href="#">[arXiv]</a></div>
+        </li>
+        
+        <!-- Journal Paper -->
+        <li>
+          <div class="pub-title">Evaluation of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using D-CRITIC and Fuzzy MULTI-MOORA Techniques: A Real Case Study <span class="badge-journal">Journal Paper</span></div>
+          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, & Eghbali-Zarch, M. (2024)</div>
+          <div class="pub-venue"><strong>Expert Systems with Applications</strong> (Q1, Impact Factor: 8.5)</div>
+          <div class="pub-links"><a href="#">[PDF]</a> <a href="#">[DOI]</a></div>
+        </li>
+        
+        <!-- Book Chapter -->
+        <li>
+          <div class="pub-title">Encyclopedia of Multi-Attribute Decision Making (MADM) – Chapters on IDOCRIW and MULTIMOORA <span class="badge-chapter">Book Chapter</span></div>
+          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, & Eghbali-Zarch, M. (2025)</div>
+          <div class="pub-venue"><strong>Elsevier</strong> (Invited Contribution)</div>
+          <div class="pub-links"><a href="#">[Publisher]</a></div>
+        </li>
+        
+        <!-- Working Paper 1 -->
+        <li>
+          <div class="pub-title">Kanban and Seven Types of Waste in Lean Production <span class="badge-preprint">Working Paper</span></div>
+          <div class="pub-authors">Solouki, S., <strong>Ghaemi-Zadeh, N.</strong>, & Nasiri, G.R. (2022)</div>
+          <div class="pub-venue">Language: Persian | <a href="#">Preprint available</a></div>
+        </li>
+        
+        <!-- Working Paper 2 -->
+        <li>
+          <div class="pub-title">Lean Production and Its Techniques <span class="badge-preprint">Working Paper</span></div>
+          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, Solouki, S., & Nasiri, G.R. (2022)</div>
+          <div class="pub-venue">Language: Persian | <a href="#">Preprint available</a></div>
+        </li>
+        
+        <!-- Conference Paper -->
+        <li>
+          <div class="pub-title">Dynamic Assessment of Energy Internet's Emission Reduction Effect on the Supply Side <span class="badge-conference">Conference Paper</span></div>
+          <div class="pub-authors">Sami-Zadeh, R., <strong>Ghaemi-Zadeh, N.</strong>, & Zandi, S. (2023)</div>
+          <div class="pub-venue">Presented at the <strong>6th International Conference on Mechanical, Industrial and Aerospace Engineering</strong></div>
+          <div class="pub-links"><a href="#">[Conference Proceedings]</a></div>
+        </li>
+        
       </ul>
-      <a href="publications.html" class="view-all">View all publications &rarr;</a>
+      <a href="publications.html" class="view-all">View all publications →</a>
     </div>
 
-    <!-- Selected Projects (will be populated from data.js) -->
+    <!-- Selected Projects (Placeholder - will be populated from data.js if needed) -->
     <div class="homepage-section">
       <h2>Selected Projects</h2>
       <ul id="projects-list">
-        <!-- This will be automatically populated by main.js from data.js -->
+        <li>Portfolio Optimization with Fuzzy Logic (Python/GAMS)</li>
+        <li>Obesity Risk Prediction using NHANES Data (Machine Learning/R)</li>
+        <li>Business Strategy Evaluation with MCDM Techniques</li>
       </ul>
-      <a href="projects.html" class="view-all">View all projects &rarr;</a>
+      <a href="projects.html" class="view-all">View all projects →</a>
     </div>
+
   </main>
 
   <div id="site-footer"></div>
