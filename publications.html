@@ -1,76 +1,218 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Publications - Your Name</title>
-  <meta name="author" content="Your Name">
+  <meta charset="UTF-8">
+  <title>Publications | Nazanin Ghaemi-Zadeh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Publications and preprints of Your Name.">
-  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Publications - Your Name">
-  <meta property="og:description" content="Publications and preprints of Your Name.">
-  <meta property="og:image" content="https://yourwebsite.com/figures/me.jpg">
-  <meta property="og:url" content="https://yourwebsite.com/publications.html">
-  <meta property="og:type" content="profile">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Publications - Your Name">
-  <meta name="twitter:description" content="Publications and preprints of Your Name.">
-  <meta name="twitter:image" content="https://yourwebsite.com/figures/me.jpg">
-
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="shared-styles.css">
-  <link rel="icon" type="image/png" href="figures/logo.png">
   <style>
-    .page-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 24px;
-      text-align: left;
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(17, 24, 39, 0.6);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
     }
 
-    .publication-list li {
-      margin-bottom: 6px !important;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
     }
 
-    [data-theme="dark"] .page-title { color: var(--text-color); }
+    body {
+      background: linear-gradient(135deg, #0b0f19, #0f172a);
+      color: var(--text);
+      line-height: 1.75;
+    }
 
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+      padding: 10px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(17, 24, 39, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    /* SECTION */
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      transition: 0.2s;
+      user-select: none;
+    }
+
+    .tab.active {
+      color: var(--text);
+      border-color: rgba(96,165,250,0.5);
+      background: rgba(96,165,250,0.08);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
-  <div id="site-nav"></div>
 
-  <main id="main-content" class="main-content-wrapper page-shell">
-    <h1 class="page-title">Publications</h1>
+<div class="container">
 
-    <!-- Preprints -->
-    <div style="margin-bottom:24px;">
-      <h2 id="preprints">Preprints</h2>
-      <ul id="preprints-list" class="publication-list">
-        <!-- Preprints will be inserted here -->
-      </ul>
+  <!-- NAV -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <!-- SECTION -->
+  <div class="section">
+    <h2>Publications</h2>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active" onclick="filter('all')">ALL</div>
+      <div class="tab" onclick="filter('journal')">Journal Papers</div>
+      <div class="tab" onclick="filter('conference')">Conferences</div>
+      <div class="tab" onclick="filter('preprint')">Preprints</div>
+      <div class="tab" onclick="filter('working')">Working Papers</div>
+      <div class="tab" onclick="filter('book')">Book Chapter</div>
     </div>
 
-    <!-- Full Publications -->
-    <div style="margin-bottom:24px;">
-      <h2 id="publications">Publications</h2>
-      <ul id="publications-list" class="publication-list">
-        <!-- Publications will be inserted here -->
-      </ul>
+    <!-- PREPRINT -->
+    <div class="item preprint card">
+      <div class="title">Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach</div>
+      <div class="meta">Ghaemi-Zadeh, N., Habibi, M., & Seifbarghy, M. (2026)</div>
+      <a href="https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5481621" target="_blank">SSRN Preprint</a>
     </div>
-  </main>
 
-  <div id="site-footer"></div>
+    <!-- JOURNAL -->
+    <div class="item journal card">
+      <div class="title">Evaluation of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using D-CRITIC and Fuzzy MULTI-MOORA Techniques: A Real Case Study</div>
+      <div class="meta">Ghaemi-Zadeh, N., & Eghbali-Zarch, M. (2024) — Expert Systems with Applications</div>
+      <a href="https://doi.org/10.1016/j.eswa.2024.123183" target="_blank">DOI Link</a>
+    </div>
 
-  <!-- Load JavaScript files -->
-  <script src="site-shell.js"></script>
-  <script src="utils.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+    <!-- BOOK CHAPTER -->
+    <div class="item book card">
+      <div class="title">Encyclopedia of Multi-Attribute Decision Making (MADM)</div>
+      <div class="meta">Invited contributor (2025) — Elsevier</div>
+      <a href="https://shop.elsevier.com/books/encyclopedia-of-multi-attribute-decision-making-madm/haseli/978-0-443-33275-3" target="_blank">Publisher</a>
+    </div>
+
+    <!-- WORKING PAPERS -->
+    <div class="item working card">
+      <div class="title">Kanban and Seven Types of Waste in Lean Production</div>
+      <div class="meta">Solouki, S., Ghaemi-Zadeh, N., & Nasiri, G.R. (2022)</div>
+      <a href="https://www.researchgate.net/publication/360996874_Working_Paper_Kanban_and_Seven_Types_of_Waste_in_Lean_Production_Persian_Language" target="_blank">ResearchGate</a>
+    </div>
+
+    <div class="item working card">
+      <div class="title">Lean Production and Its Techniques</div>
+      <div class="meta">Solouki, S., Ghaemi-Zadeh, N., & Nasiri, G.R. (2022)</div>
+      <a href="https://www.researchgate.net/publication/357688941_Working_Paper_Lean_Production_and_Its_Techniques_Persian_Language" target="_blank">ResearchGate</a>
+    </div>
+
+    <!-- CONFERENCE -->
+    <div class="item conference card">
+      <div class="title">Dynamic Assessment of Energy Internet's Emission Reduction Effect on the Supply Side</div>
+      <div class="meta">Sami-Zadeh, R., Ghaemi-Zadeh, N., & Zandi, S. (2023) — 6th International Conference on Mechanical, Industrial and Aerospace Engineering</div>
+      <a href="https://www.researchgate.net/publication/370844971_Dynamic_Assessment_of_the_Energy_Internet's_Emission_Reduction_Effect_on_the_Supply_Side" target="_blank">Paper Link</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function filter(type) {
+  const items = document.querySelectorAll('.item');
+  const tabs = document.querySelectorAll('.tab');
+
+  tabs.forEach(t => t.classList.remove('active'));
+
+  event.target.classList.add('active');
+
+  items.forEach(i => {
+    if (type === 'all') {
+      i.style.display = 'block';
+    } else {
+      i.style.display = i.classList.contains(type) ? 'block' : 'none';
+    }
+  });
+}
+</script>
+
 </body>
-
 </html>
