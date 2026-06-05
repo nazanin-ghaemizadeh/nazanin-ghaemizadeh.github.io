@@ -1,225 +1,238 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <title>Nazanin Ghaemi-Zadeh | Systems Optimization</title>
-  <meta name="author" content="Nazanin Ghaemi-Zadeh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Nazanin Ghaemi-Zadeh - Ph.D. candidate in Systems Optimization at Sharif University of Technology. Research: Optimization, Data-driven Decision-making, and AI.">
-  <meta name="keywords" content="Nazanin Ghaemi-Zadeh, Sharif University, Systems Optimization, Portfolio Optimization, MCDM, Fuzzy Logic">
-  <meta name="robots" content="index, follow">
 
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="Nazanin Ghaemi-Zadeh | Ph.D. Candidate in Systems Optimization">
-  <meta property="og:description" content="Ph.D. candidate in Systems Optimization at Sharif University of Technology.">
-  <meta property="og:image" content="https://nazanin-ghaemizadeh.github.io/figures/me.jpg">
-  <meta property="og:url" content="https://nazanin-ghaemizadeh.github.io/">
-  <meta property="og:type" content="profile">
-
-  <!-- Twitter Card tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nazanin Ghaemi-Zadeh">
-  <meta name="twitter:description" content="Ph.D. candidate in Systems Optimization at Sharif University of Technology.">
-  <meta name="twitter:image" content="https://nazanin-ghaemizadeh.github.io/figures/me.jpg">
-
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="shared-styles.css">
-  <link rel="icon" type="image/png" href="figures/logo.png">
-
-  <link rel="preload" href="figures/me.jpg" as="image">
-  <link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Justified text for bio paragraphs */
-    .profile-text .bio {
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(17, 24, 39, 0.6);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0b0f19, #0f172a);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .hero {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pronunciation {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .bio {
+      font-size: 15px;
+      margin-bottom: 10px;
       text-align: justify;
       text-justify: inter-word;
     }
-    
-    .profile-section {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-    .profile-text {
-      flex: 1;
-    }
-    .profile-text .name {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 2px;
-    }
-    .profile-text .pronunciation {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 16px;
-    }
-    .profile-text .bio {
-      font-size: 16px;
-      color: #374151;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .profile-links a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    .profile-links a:hover {
-      color: var(--secondary-color);
-    }
-    .profile-photo {
-      flex-shrink: 0;
-      width: 160px;
-      height: 160px;
-      margin-top: 8px;
-      border: 1px solid #e5e7eb;
-    }
-    .homepage-section {
-      margin-bottom: 28px;
-    }
-    .homepage-section h2 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 12px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .view-all {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 13px;
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    [data-theme="dark"] .profile-text .name { color: var(--text-color); }
-    [data-theme="dark"] .profile-text .bio { color: var(--text-color); }
-    [data-theme="dark"] .profile-photo { border-color: #374151; }
-    [data-theme="dark"] .homepage-section h2 { color: var(--text-color); border-bottom-color: #374151; }
 
-    @media screen and (max-width: 768px) {
-      .profile-section {
-        flex-direction: column-reverse;
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(96,165,250,0.4);
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
         align-items: center;
-        gap: 16px;
-      }
-      .profile-text .name, .profile-text .pronunciation, .profile-links {
         text-align: center;
       }
-      .profile-text .bio {
-        text-align: justify;
+
+      .avatar {
+        width: 130px;
+        height: 130px;
       }
-      .profile-photo { margin-top: 0; }
     }
   </style>
 </head>
 
 <body>
-  <div id="site-nav"></div>
 
-  <main id="main-content" class="homepage page-shell">
-    <!-- Profile Section -->
-    <div class="profile-section">
-      <div class="profile-text">
-        <div class="name">Nazanin Ghaemi-Zadeh</div>
-        <div class="pronunciation">(nɑːˈzɑːniːn ˈɡeɪmi ˈzɑːdeɪ)</div>
-        
-        <p class="bio">
-          Hi! I am a <strong>Ph.D. candidate in Systems Optimization</strong> at 
-          <a href="https://www.sharif.ir/" target="_blank">Sharif University of Technology</a>, 
-          supervised by Prof. <a href="https://scholar.google.com/citations?user=mVuM_ycAAAAJ&hl=en" target="_blank">Kourosh Eshghi</a>.
-        </p>
-        
-        <p class="bio">
-          I received my Master's degree in <strong>Engineering Management</strong> from Sharif University of Technology, 
-          under the supervision of Dr. <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
-          and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.
-        </p>
-        
-        <p class="bio">
-          I also hold a Bachelor's degree in <strong>Industrial Engineering</strong> from 
-          <a href="https://alzahra.ac.ir/" target="_blank">Alzahra University</a>, 
-          where I was supervised by 
-          <a href="https://scholar.google.com/citations?user=wAv9ZhYAAAAJ&hl=en" target="_blank">Maryam Eghbali-Zarch</a>.
-        </p>
-        
-        <p class="bio">
-          My research interests lie at the intersection of <strong>Optimization, Data-driven Decision-making, and Machine Learning</strong>. 
-          I am particularly interested in how data and intelligent algorithms can be integrated with optimization models 
-          to solve complex, real-world problems under uncertainty.
-        </p>
-        
-        <p class="bio">
-          Feel free to reach out if you'd like to discuss research or explore potential collaboration!
-        </p>
-        
-        <div class="profile-links">
-          <a href="mailto:nghz.sut@gmail.com">Email</a> /
-          <a href="https://github.com/nazanin-ghaemizadeh">GitHub</a> /
-          <a href="https://www.linkedin.com/in/nazanin-ghaemizadeh">LinkedIn</a> /
-          <a href="https://scholar.google.com/citations?user=YOURID">Google Scholar</a>
-        </div>
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <img class="avatar" src="figures/me.jpg" alt="Nazanin Ghaemi-Zadeh">
+
+    <div>
+
+      <div class="name">Nazanin Ghaemi-Zadeh</div>
+
+      <div class="pronunciation">(nɑːˈzɑːniːn ˈɡeɪmi ˈzɑːdeɪ)</div>
+
+      <p class="bio">
+        Hi! I am a <strong>Ph.D. candidate in Systems Optimization</strong> at 
+        <a href="https://www.sharif.ir/" target="_blank">Sharif University of Technology</a>, 
+        supervised by Prof. <a href="https://scholar.google.com/citations?user=mVuM_ycAAAAJ&hl=en" target="_blank">Kourosh Eshghi</a>.
+      </p>
+
+      <p class="bio">
+        I received my Master of Science in Engineering Management from Sharif University of Technology, 
+        under the supervision of Dr. <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
+        and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.  
+        My master's thesis was titled:  
+        <strong>“Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy”</strong>.
+      </p>
+
+      <p class="bio">
+        I hold a Bachelor of Science in Industrial Engineering from 
+        <a href="https://alzahra.ac.ir/" target="_blank">Alzahra University</a>, 
+        where I was supervised by 
+        <a href="https://scholar.google.com/citations?user=wAv9ZhYAAAAJ&hl=en" target="_blank">Maryam Eghbali-Zarch</a>.  
+        My bachelor's thesis was titled:  
+        <strong>“Ranking of Business Strategies Using Multi-Criteria Decision-Making (MCDM) Techniques”</strong>.
+      </p>
+
+      <p class="bio">
+        My research interests lie at the intersection of <strong>Optimization, Data-driven Decision-making, and Machine Learning</strong>. 
+        I focus on integrating intelligent algorithms with mathematical optimization to solve complex problems under uncertainty.
+      </p>
+
+      <p class="bio">
+        Feel free to reach out if you'd like to discuss research or potential collaboration!
+      </p>
+
+      <div class="links">
+        <a href="mailto:nghz.sut@gmail.com">Email</a> /
+        <a href="https://github.com/nazanin-ghaemizadeh">GitHub</a> /
+        <a href="https://www.linkedin.com/in/nazanin-ghaemizadeh">LinkedIn</a> /
+        <a href="https://scholar.google.com/citations?user=YOURID">Google Scholar</a>
       </div>
-      <img class="profile-photo" alt="Nazanin Ghaemi-Zadeh" src="figures/me.jpg" loading="eager" width="160" height="160">
+
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <h2>Education</h2>
+
+    <div class="card">
+      <div class="title">Sharif University of Technology — Ph.D.</div>
+      <div class="meta">Sep 2025 – Present | Industrial Engineering, Systems Optimization</div>
     </div>
 
-    <!-- Education Section -->
-    <div class="homepage-section">
-      <h2>Education</h2>
-      <ul class="publication-list">
-
-        <li>
-          <div class="pub-title">Sharif University of Technology</div>
-          <div class="pub-venue">Sep 2025 – Sep 20</div>
-          <div class="pub-authors">Doctor of Philosophy in Industrial Engineering, Systems Optimization</div>
-        </li>
-
-        <li>
-          <div class="pub-title">Sharif University of Technology</div>
-          <div class="pub-venue">Sep 2023 – Sep 2025</div>
-          <div class="pub-authors">Master of Science in Engineering Management, Industrial Engineering</div>
-          <div class="pub-authors">
-            Thesis: “Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach”
-          </div>
-          <div class="pub-authors">GPA: 4.00/4.00 (18.91/20)</div>
-        </li>
-
-        <li>
-          <div class="pub-title">Alzahra University</div>
-          <div class="pub-venue">Feb 2019 – Jan 2023</div>
-          <div class="pub-authors">Bachelor of Science in Industrial Engineering</div>
-          <div class="pub-authors">
-            Thesis: “Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques”
-          </div>
-          <div class="pub-authors">Last Two Years GPA: 4.00/4.00 (19.48/20)</div>
-          <div class="pub-authors">GPA: 3.94/4.00 (19.09/20)</div>
-        </li>
-
-        <li>
-          <div class="pub-title">Roshangaran High School</div>
-          <div class="pub-venue">Sep 2014 – May 2018</div>
-          <div class="pub-authors">Certificated Diploma in Mathematics and Physics</div>
-          <div class="pub-authors">GPA: 4.00/4.00 (19.84/20)</div>
-        </li>
-
-      </ul>
+    <div class="card">
+      <div class="title">Sharif University of Technology — M.Sc.</div>
+      <div class="meta">Sep 2023 – Sep 2025 | Industrial Engineering, Engineering Management</div>
+      <div class="meta">
+        Thesis: “Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach”
+      </div>
+      <div class="meta">GPA: 4.00/4.00 (18.91/20)</div>
     </div>
 
-  </main>
+    <div class="card">
+      <div class="title">Alzahra University — B.Sc.</div>
+      <div class="meta">Feb 2019 – Jan 2023 | Industrial Engineering</div>
+      <div class="meta">
+        Thesis: “Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques”
+      </div>
+      <div class="meta">GPA: 3.94/4.00 (19.09/20)</div>
+    </div>
 
-  <div id="site-footer"></div>
+    <div class="card">
+      <div class="title">Roshangaran High School — Diploma</div>
+      <div class="meta">Sep 2014 – May 2018 | Mathematics & Physics</div>
+      <div class="meta">GPA: 4.00/4.00 (19.84/20)</div>
+    </div>
 
-  <script src="site-shell.js"></script>
-  <script src="utils.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+  </div>
+
+</div>
+
 </body>
-
 </html>
