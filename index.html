@@ -6,10 +6,7 @@
   <title>Nazanin Ghaemi-Zadeh | Systems Optimization</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -38,9 +35,29 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
+    /* NAV (برای آینده سایتت) */
+    .topnav {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      padding: 18px 0 30px;
+      font-size: 14px;
+    }
+
+    .topnav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .topnav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
     .hero {
       display: flex;
       gap: 32px;
@@ -63,7 +80,6 @@
     .name {
       font-size: 28px;
       font-weight: 700;
-      margin-bottom: 4px;
     }
 
     .pronunciation {
@@ -76,7 +92,6 @@
       font-size: 15px;
       margin-bottom: 10px;
       text-align: justify;
-      text-justify: inter-word;
     }
 
     a {
@@ -88,7 +103,7 @@
       text-decoration: underline;
     }
 
-    /* ICON LINKS */
+    /* ICONS */
     .icon-links {
       display: flex;
       gap: 14px;
@@ -96,59 +111,66 @@
     }
 
     .icon-links a {
-      font-size: 18px;
-      color: var(--muted);
-      transition: 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       width: 40px;
       height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 10px;
       border: 1px solid var(--border);
+      color: var(--muted);
       background: rgba(255,255,255,0.02);
+      transition: 0.2s;
     }
 
     .icon-links a:hover {
       color: var(--accent);
-      border-color: rgba(96,165,250,0.5);
+      border-color: var(--accent);
       transform: translateY(-2px);
     }
 
+    /* SECTIONS */
     .section {
-      margin-top: 40px;
+      margin-top: 45px;
     }
 
     .section h2 {
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px 20px;
+      padding: 18px;
       margin-bottom: 12px;
-      transition: 0.2s ease;
+      transition: 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       border-color: rgba(96,165,250,0.4);
     }
 
     .title {
       font-weight: 600;
-      margin-bottom: 4px;
     }
 
     .meta {
       font-size: 13px;
       color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
     }
 
     @media (max-width: 768px) {
@@ -156,11 +178,6 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
-
-      .avatar {
-        width: 130px;
-        height: 130px;
       }
 
       .icon-links {
@@ -174,100 +191,75 @@
 
 <div class="container">
 
+  <!-- NAV -->
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+
   <!-- HERO -->
   <div class="hero">
 
-    <img class="avatar" src="figures/me.jpg" alt="Nazanin Ghaemi-Zadeh">
+    <img class="avatar" src="figures/me.jpg" alt="Nazanin">
 
     <div>
 
       <div class="name">Nazanin Ghaemi-Zadeh</div>
-
       <div class="pronunciation">(nɑːˈzɑːniːn ˈɡeɪmi ˈzɑːdeɪ)</div>
 
       <p class="bio">
-        Hi! I am a <strong>Ph.D. candidate in Systems Optimization</strong> at 
-        <a href="https://www.sharif.ir/" target="_blank">Sharif University of Technology</a>, 
-        supervised by Prof. <a href="https://scholar.google.com/citations?user=mVuM_ycAAAAJ&hl=en" target="_blank">Kourosh Eshghi</a>.
+        Hi! I am a <strong>Ph.D. candidate in Systems Optimization</strong> at Sharif University of Technology,
+        supervised by Prof. Kourosh Eshghi.
       </p>
 
       <p class="bio">
-        I received my Master of Science in Engineering Management from Sharif University of Technology, 
-        under the supervision of Dr. <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
-        and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.
+        I received my MSc in Engineering Management and BSc in Industrial Engineering.
       </p>
 
       <p class="bio">
-        I hold a Bachelor of Science in Industrial Engineering from 
-        <a href="https://alzahra.ac.ir/" target="_blank">Alzahra University</a>, 
-        where I was supervised by 
-        <a href="https://scholar.google.com/citations?user=wAv9ZhYAAAAJ&hl=en" target="_blank">Maryam Eghbali-Zarch</a>.
+        My research focuses on optimization, machine learning, and decision-making under uncertainty.
       </p>
 
-      <p class="bio">
-        My research interests lie at the intersection of <strong>Optimization, Data-driven Decision-making, and Machine Learning</strong>.
-        I focus on integrating intelligent algorithms with mathematical optimization to solve complex problems under uncertainty.
-      </p>
-
-      <p class="bio">
-        Feel free to reach out if you'd like to discuss research or potential collaboration!
-      </p>
-
-      <!-- ICON LINKS -->
       <div class="icon-links">
-
-        <a href="mailto:nghz.sut@gmail.com" title="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-
-        <a href="https://github.com/nazanin-ghaemizadeh" target="_blank" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/nazanin-ghaemizadeh" target="_blank" title="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" title="Google Scholar">
-          <i class="fa-brands fa-google"></i>
-        </a>
-
+        <a href="mailto:nghz.sut@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/nazanin-ghaemizadeh"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-google"></i></a>
       </div>
 
     </div>
   </div>
+
+  <div class="divider"></div>
 
   <!-- EDUCATION -->
   <div class="section">
     <h2>Education</h2>
 
     <div class="card">
-      <div class="title">Sharif University of Technology — Ph.D.</div>
-      <div class="meta">Sep 2025 – Present | Industrial Engineering, Systems Optimization</div>
+      <div class="title">Ph.D. — Sharif University of Technology</div>
+      <div class="meta">2025 – Present | Systems Optimization</div>
     </div>
 
     <div class="card">
-      <div class="title">Sharif University of Technology — M.Sc.</div>
-      <div class="meta">Sep 2023 – Sep 2025 | Industrial Engineering, Engineering Management</div>
-      <div class="meta">
-        Thesis: “Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach”
-      </div>
-      <div class="meta">GPA: 4.00/4.00 (18.91/20)</div>
+      <div class="title">M.Sc. — Sharif University of Technology</div>
+      <div class="meta">Engineering Management</div>
+      <div class="meta">Thesis: Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach</div>
+      <div class="meta">GPA: 4.00/4.00</div>
     </div>
 
     <div class="card">
-      <div class="title">Alzahra University — B.Sc.</div>
-      <div class="meta">Feb 2019 – Jan 2023 | Industrial Engineering</div>
-      <div class="meta">
-        Thesis: “Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques”
-      </div>
-      <div class="meta">GPA: 3.94/4.00 (19.09/20)</div>
+      <div class="title">B.Sc. — Alzahra University</div>
+      <div class="meta">Industrial Engineering</div>
+      <div class="meta">Thesis: Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques</div>
     </div>
 
     <div class="card">
-      <div class="title">Roshangaran High School — Diploma</div>
-      <div class="meta">Sep 2014 – May 2018 | Mathematics & Physics</div>
-      <div class="meta">GPA: 4.00/4.00 (19.84/20)</div>
+      <div class="title">Roshangaran High School</div>
+      <div class="meta">Math & Physics</div>
     </div>
 
   </div>
