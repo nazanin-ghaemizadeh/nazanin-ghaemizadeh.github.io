@@ -1,0 +1,13 @@
+media:
+  input: "figures"
+  output: "/figures"
+
+content:
+  - name: "pages"
+    label: "Pages"
+    type: "file"
+    path: "index.html"
+    fields:
+      - name: "body"
+        label: "Body"
+        type: "rich-text"
