@@ -92,93 +92,6 @@
       padding-bottom: 4px;
       border-bottom: 1px solid #e5e7eb;
     }
-    .news-list {
-      list-style: none !important;
-      padding-left: 0 !important;
-      margin: 0 !important;
-    }
-    .news-list li {
-      display: flex;
-      color: #374151;
-      line-height: 1.6;
-      margin-bottom: 4px !important;
-    }
-    .news-date {
-      font-weight: 600;
-      color: #1a1a1a;
-      width: 100px;
-      flex-shrink: 0;
-    }
-    .publication-list {
-      list-style: none !important;
-      padding-left: 0 !important;
-    }
-    .publication-list li {
-      margin-bottom: 12px !important;
-      padding-bottom: 8px !important;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .publication-list li:last-child {
-      border-bottom: none;
-    }
-    .pub-title {
-      font-weight: 600;
-      color: #1a1a1a;
-    }
-    .pub-authors {
-      font-style: italic;
-      color: #555;
-      font-size: 0.92em;
-    }
-    .pub-venue {
-      font-size: 0.9em;
-      color: #0065C0;
-    }
-    .pub-links {
-      margin-top: 4px;
-      font-size: 0.85em;
-    }
-    .pub-links a {
-      color: var(--primary-color);
-      text-decoration: none;
-      margin-right: 12px;
-    }
-    .badge-preprint {
-      background-color: #f09228;
-      color: white;
-      font-size: 0.7em;
-      padding: 2px 6px;
-      border-radius: 10px;
-      margin-left: 8px;
-      display: inline-block;
-    }
-    .badge-journal {
-      background-color: #0065C0;
-      color: white;
-      font-size: 0.7em;
-      padding: 2px 6px;
-      border-radius: 10px;
-      margin-left: 8px;
-      display: inline-block;
-    }
-    .badge-chapter {
-      background-color: #2e7d64;
-      color: white;
-      font-size: 0.7em;
-      padding: 2px 6px;
-      border-radius: 10px;
-      margin-left: 8px;
-      display: inline-block;
-    }
-    .badge-conference {
-      background-color: #8b5cf6;
-      color: white;
-      font-size: 0.7em;
-      padding: 2px 6px;
-      border-radius: 10px;
-      margin-left: 8px;
-      display: inline-block;
-    }
     .view-all {
       display: inline-block;
       margin-top: 8px;
@@ -190,9 +103,6 @@
     [data-theme="dark"] .profile-text .bio { color: var(--text-color); }
     [data-theme="dark"] .profile-photo { border-color: #374151; }
     [data-theme="dark"] .homepage-section h2 { color: var(--text-color); border-bottom-color: #374151; }
-    [data-theme="dark"] .pub-title { color: var(--text-color); }
-    [data-theme="dark"] .pub-authors { color: #b8b8b8; }
-    [data-theme="dark"] .publication-list li { border-bottom-color: #374151; }
 
     @media screen and (max-width: 768px) {
       .profile-section {
@@ -207,14 +117,6 @@
         text-align: justify;
       }
       .profile-photo { margin-top: 0; }
-      .news-list li {
-        flex-direction: column;
-        margin-bottom: 12px !important;
-      }
-      .news-date {
-        width: auto;
-        font-weight: bold;
-      }
     }
   </style>
 </head>
@@ -268,80 +170,46 @@
       <img class="profile-photo" alt="Nazanin Ghaemi-Zadeh" src="figures/me.jpg" loading="eager" width="160" height="160">
     </div>
 
-    <!-- News Section -->
+    <!-- Education Section -->
     <div class="homepage-section">
-      <h2>News</h2>
-      <ul class="news-list">
-        <li><span class="news-date">Mar 2025</span><span>New preprint: "Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy"</span></li>
-        <li><span class="news-date">Jan 2025</span><span>Invited to contribute to Elsevier's <em>Encyclopedia of Multi-Attribute Decision Making</em> (Chapters on IDOCRIW & MULTIMOORA)</span></li>
-        <li><span class="news-date">Sep 2024</span><span>Started Ph.D. in Systems Optimization at Sharif University of Technology</span></li>
-        <li><span class="news-date">Jan 2024</span><span>Paper accepted in <em>Expert Systems with Applications</em> (Q1, IF: 8.5)</span></li>
-      </ul>
-    </div>
-
-    <!-- Publications Section (Complete list as requested) -->
-    <div class="homepage-section">
-      <h2>Publications</h2>
+      <h2>Education</h2>
       <ul class="publication-list">
-        
-        <!-- Preprint -->
-        <li>
-          <div class="pub-title">Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach <span class="badge-preprint">Preprint</span></div>
-          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, Habibi, M., & Seifbarghy, M. (2026)</div>
-          <div class="pub-links"><a href="#">[Preprint]</a> <a href="#">[arXiv]</a></div>
-        </li>
-        
-        <!-- Journal Paper -->
-        <li>
-          <div class="pub-title">Evaluation of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using D-CRITIC and Fuzzy MULTI-MOORA Techniques: A Real Case Study <span class="badge-journal">Journal Paper</span></div>
-          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, & Eghbali-Zarch, M. (2024)</div>
-          <div class="pub-venue"><strong>Expert Systems with Applications</strong> (Q1, Impact Factor: 8.5)</div>
-          <div class="pub-links"><a href="#">[PDF]</a> <a href="#">[DOI]</a></div>
-        </li>
-        
-        <!-- Book Chapter -->
-        <li>
-          <div class="pub-title">Encyclopedia of Multi-Attribute Decision Making (MADM) – Chapters on IDOCRIW and MULTIMOORA <span class="badge-chapter">Book Chapter</span></div>
-          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, & Eghbali-Zarch, M. (2025)</div>
-          <div class="pub-venue"><strong>Elsevier</strong> (Invited Contribution)</div>
-          <div class="pub-links"><a href="#">[Publisher]</a></div>
-        </li>
-        
-        <!-- Working Paper 1 -->
-        <li>
-          <div class="pub-title">Kanban and Seven Types of Waste in Lean Production <span class="badge-preprint">Working Paper</span></div>
-          <div class="pub-authors">Solouki, S., <strong>Ghaemi-Zadeh, N.</strong>, & Nasiri, G.R. (2022)</div>
-          <div class="pub-venue">Language: Persian | <a href="#">Preprint available</a></div>
-        </li>
-        
-        <!-- Working Paper 2 -->
-        <li>
-          <div class="pub-title">Lean Production and Its Techniques <span class="badge-preprint">Working Paper</span></div>
-          <div class="pub-authors"><strong>Ghaemi-Zadeh, N.</strong>, Solouki, S., & Nasiri, G.R. (2022)</div>
-          <div class="pub-venue">Language: Persian | <a href="#">Preprint available</a></div>
-        </li>
-        
-        <!-- Conference Paper -->
-        <li>
-          <div class="pub-title">Dynamic Assessment of Energy Internet's Emission Reduction Effect on the Supply Side <span class="badge-conference">Conference Paper</span></div>
-          <div class="pub-authors">Sami-Zadeh, R., <strong>Ghaemi-Zadeh, N.</strong>, & Zandi, S. (2023)</div>
-          <div class="pub-venue">Presented at the <strong>6th International Conference on Mechanical, Industrial and Aerospace Engineering</strong></div>
-          <div class="pub-links"><a href="#">[Conference Proceedings]</a></div>
-        </li>
-        
-      </ul>
-      <a href="publications.html" class="view-all">View all publications →</a>
-    </div>
 
-    <!-- Selected Projects (Placeholder - will be populated from data.js if needed) -->
-    <div class="homepage-section">
-      <h2>Selected Projects</h2>
-      <ul id="projects-list">
-        <li>Portfolio Optimization with Fuzzy Logic (Python/GAMS)</li>
-        <li>Obesity Risk Prediction using NHANES Data (Machine Learning/R)</li>
-        <li>Business Strategy Evaluation with MCDM Techniques</li>
+        <li>
+          <div class="pub-title">Sharif University of Technology</div>
+          <div class="pub-venue">Sep 2025 – Sep 20</div>
+          <div class="pub-authors">Doctor of Philosophy in Industrial Engineering, Systems Optimization</div>
+        </li>
+
+        <li>
+          <div class="pub-title">Sharif University of Technology</div>
+          <div class="pub-venue">Sep 2023 – Sep 2025</div>
+          <div class="pub-authors">Master of Science in Engineering Management, Industrial Engineering</div>
+          <div class="pub-authors">
+            Thesis: “Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach”
+          </div>
+          <div class="pub-authors">GPA: 4.00/4.00 (18.91/20)</div>
+        </li>
+
+        <li>
+          <div class="pub-title">Alzahra University</div>
+          <div class="pub-venue">Feb 2019 – Jan 2023</div>
+          <div class="pub-authors">Bachelor of Science in Industrial Engineering</div>
+          <div class="pub-authors">
+            Thesis: “Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques”
+          </div>
+          <div class="pub-authors">Last Two Years GPA: 4.00/4.00 (19.48/20)</div>
+          <div class="pub-authors">GPA: 3.94/4.00 (19.09/20)</div>
+        </li>
+
+        <li>
+          <div class="pub-title">Roshangaran High School</div>
+          <div class="pub-venue">Sep 2014 – May 2018</div>
+          <div class="pub-authors">Certificated Diploma in Mathematics and Physics</div>
+          <div class="pub-authors">GPA: 4.00/4.00 (19.84/20)</div>
+        </li>
+
       </ul>
-      <a href="projects.html" class="view-all">View all projects →</a>
     </div>
 
   </main>
