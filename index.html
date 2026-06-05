@@ -6,7 +6,11 @@
   <title>Nazanin Ghaemi-Zadeh | Systems Optimization</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
@@ -84,9 +88,31 @@
       text-decoration: underline;
     }
 
-    .links {
-      margin-top: 14px;
-      font-size: 14px;
+    /* ICON LINKS */
+    .icon-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .icon-links a {
+      font-size: 18px;
+      color: var(--muted);
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .icon-links a:hover {
+      color: var(--accent);
+      border-color: rgba(96,165,250,0.5);
+      transform: translateY(-2px);
     }
 
     .section {
@@ -136,6 +162,10 @@
         width: 130px;
         height: 130px;
       }
+
+      .icon-links {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -164,22 +194,18 @@
       <p class="bio">
         I received my Master of Science in Engineering Management from Sharif University of Technology, 
         under the supervision of Dr. <a href="https://scholar.google.com/citations?user=p7spsz8AAAAJ&hl=en" target="_blank">Moslem Habibi</a> 
-        and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.  
-        My master's thesis was titled:  
-        <strong>“Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy”</strong>.
+        and the advisory of Dr. <a href="https://scholar.google.com/citations?user=Jowpq84AAAAJ&hl=en" target="_blank">Mehdi Seif-Barghy</a>.
       </p>
 
       <p class="bio">
         I hold a Bachelor of Science in Industrial Engineering from 
         <a href="https://alzahra.ac.ir/" target="_blank">Alzahra University</a>, 
         where I was supervised by 
-        <a href="https://scholar.google.com/citations?user=wAv9ZhYAAAAJ&hl=en" target="_blank">Maryam Eghbali-Zarch</a>.  
-        My bachelor's thesis was titled:  
-        <strong>“Ranking of Business Strategies Using Multi-Criteria Decision-Making (MCDM) Techniques”</strong>.
+        <a href="https://scholar.google.com/citations?user=wAv9ZhYAAAAJ&hl=en" target="_blank">Maryam Eghbali-Zarch</a>.
       </p>
 
       <p class="bio">
-        My research interests lie at the intersection of <strong>Optimization, Data-driven Decision-making, and Machine Learning</strong>. 
+        My research interests lie at the intersection of <strong>Optimization, Data-driven Decision-making, and Machine Learning</strong>.
         I focus on integrating intelligent algorithms with mathematical optimization to solve complex problems under uncertainty.
       </p>
 
@@ -187,11 +213,25 @@
         Feel free to reach out if you'd like to discuss research or potential collaboration!
       </p>
 
-      <div class="links">
-        <a href="mailto:nghz.sut@gmail.com">Email</a> /
-        <a href="https://github.com/nazanin-ghaemizadeh">GitHub</a> /
-        <a href="https://www.linkedin.com/in/nazanin-ghaemizadeh">LinkedIn</a> /
-        <a href="https://scholar.google.com/citations?user=YOURID">Google Scholar</a>
+      <!-- ICON LINKS -->
+      <div class="icon-links">
+
+        <a href="mailto:nghz.sut@gmail.com" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/nazanin-ghaemizadeh" target="_blank" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/nazanin-ghaemizadeh" target="_blank" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" title="Google Scholar">
+          <i class="fa-brands fa-google"></i>
+        </a>
+
       </div>
 
     </div>
