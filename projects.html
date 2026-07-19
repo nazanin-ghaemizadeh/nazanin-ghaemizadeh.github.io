@@ -81,6 +81,9 @@
       padding: 18px 20px;
       margin-bottom: 12px;
       transition: 0.2s ease;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
     }
 
     .card:hover {
@@ -88,19 +91,40 @@
       border-color: rgba(96,165,250,0.4);
     }
 
+    .thumb {
+      flex-shrink: 0;
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .thumb svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
     .title {
       font-weight: 600;
       margin-bottom: 6px;
       text-align: justify;
       text-justify: inter-word;
-    }
-
-    .title a {
-      color: var(--text);
-    }
-
-    .title a:hover {
-      color: var(--accent);
     }
 
     .meta {
@@ -116,11 +140,6 @@
       color: var(--muted);
       margin-bottom: 10px;
       font-style: italic;
-    }
-
-    .link-row {
-      display: flex;
-      gap: 18px;
     }
 
     /* ACCESS LINK (unified) */
@@ -156,32 +175,69 @@
     <h2>Projects</h2>
 
     <div class="card">
-      <div class="title"><a href="project-poropto.html">POROPTO — Portfolio Optimization Package</a></div>
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <path d="M12 78 Q30 62 48 70 T88 54" fill="none" stroke="rgba(96,165,250,0.35)" stroke-width="2"/>
+          <g transform="rotate(-90 50 46)">
+            <circle cx="50" cy="46" r="30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="11"/>
+            <circle cx="50" cy="46" r="30" fill="none" stroke="#60a5fa" stroke-width="11" stroke-dasharray="71 117.6" stroke-dashoffset="0"/>
+            <circle cx="50" cy="46" r="30" fill="none" stroke="#60a5fa" stroke-width="11" stroke-opacity="0.6" stroke-dasharray="47 141.6" stroke-dashoffset="-71"/>
+            <circle cx="50" cy="46" r="30" fill="none" stroke="#60a5fa" stroke-width="11" stroke-opacity="0.35" stroke-dasharray="70.6 118" stroke-dashoffset="-118"/>
+          </g>
+        </svg>
+      </div>
+      <div class="content">
+      <div class="title">POROPTO — Portfolio Optimization Package</div>
       <div class="meta">A Python package for sustainable multi-objective portfolio optimization under a trapezoidal intuitionistic fuzzy framework. It jointly balances return, risk (variance), uncertainty (entropy), and sustainability through an iterative intuitionistic fuzzy linear programming method, validated on real Tehran Stock Exchange data.</div>
-      <div class="stack"><i class="fa-brands fa-python"></i>&nbsp;Python, Pyomo, AMPL/Bonmin</div>
-      <div class="link-row">
-        <a class="access-link" href="project-poropto.html"><i class="fa-solid fa-arrow-right"></i>Details</a>
-        <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/POROPTO-Portfolio-Optimization-Package" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+      <div class="stack"><i class="fa-brands fa-python"></i>&nbsp;Pyomo, AMPL/Bonmin</div>
+      <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/POROPTO-Portfolio-Optimization-Package" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="title"><a href="project-obesity.html">Predicting Obesity Risk Using NHANES Data and Machine Learning</a></div>
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <circle cx="34" cy="30" r="10" fill="rgba(255,255,255,0.18)"/>
+          <path d="M20 76 Q20 50 34 50 Q48 50 48 76 Z" fill="rgba(255,255,255,0.18)"/>
+          <rect x="58" y="54" width="8" height="22" rx="1.5" fill="#60a5fa" fill-opacity="0.4"/>
+          <rect x="70" y="42" width="8" height="34" rx="1.5" fill="#60a5fa" fill-opacity="0.65"/>
+          <rect x="82" y="28" width="8" height="48" rx="1.5" fill="#60a5fa"/>
+        </svg>
+      </div>
+      <div class="content">
+      <div class="title">Predicting Obesity Risk Using NHANES Data and Machine Learning</div>
       <div class="meta">A data-driven classification pipeline built on NHANES health and lifestyle survey data (2011–2018, ~7,800 adults). The workflow combines missing-data imputation, physiological feature engineering, recursive feature elimination, and cross-validated tuning of five machine-learning models to classify individuals into five obesity categories.</div>
-      <div class="stack"><i class="fa-brands fa-r-project"></i>&nbsp;R, caret, randomForest, e1071, mice</div>
-      <div class="link-row">
-        <a class="access-link" href="project-obesity.html"><i class="fa-solid fa-arrow-right"></i>Details</a>
-        <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/Predicting-Obesity-Risk-Using-NHANES-Data-and-Machine-Learning" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+      <div class="stack"><i class="fa-brands fa-r-project"></i>&nbsp;caret, randomForest, e1071, mice</div>
+      <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/Predicting-Obesity-Risk-Using-NHANES-Data-and-Machine-Learning" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
       </div>
     </div>
 
     <div class="card">
-      <div class="title"><a href="project-process-mining.html">Process Mining with Real-World Financial Loan Applications</a></div>
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <line x1="22" y1="50" x2="42" y2="30" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <line x1="22" y1="50" x2="42" y2="70" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <line x1="42" y1="30" x2="66" y2="42" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <line x1="42" y1="70" x2="66" y2="58" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <line x1="66" y1="42" x2="66" y2="58" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <line x1="66" y1="50" x2="84" y2="50" stroke="#60a5fa" stroke-width="2.5"/>
+          <path d="M42 30 Q52 18 66 42" fill="none" stroke="rgba(96,165,250,0.4)" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <circle cx="22" cy="50" r="8" fill="#60a5fa"/>
+          <circle cx="42" cy="30" r="6" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="42" cy="70" r="6" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="66" cy="42" r="6" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="66" cy="58" r="6" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="84" cy="50" r="8" fill="#60a5fa"/>
+        </svg>
+      </div>
+      <div class="content">
+      <div class="title">Process Mining with Real-World Financial Loan Applications</div>
       <div class="meta">A process-mining analysis of a real Dutch bank's loan-application event log, covering more than 262,000 events across 13,000+ cases. Discovery algorithms and conformance checking are used to uncover bottlenecks, rework loops, and process variants, leading to concrete recommendations for improving process efficiency.</div>
-      <div class="stack"><i class="fa-brands fa-python"></i>&nbsp;Python, pm4py, pandas, scikit-learn</div>
-      <div class="link-row">
-        <a class="access-link" href="project-process-mining.html"><i class="fa-solid fa-arrow-right"></i>Details</a>
-        <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/Process-Mining-with-Real-World-Financial-Loan-Applications" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+      <div class="stack"><i class="fa-brands fa-python"></i>&nbsp;pm4py, pandas, scikit-learn</div>
+      <a class="access-link" href="https://github.com/nazanin-ghaemizadeh/Process-Mining-with-Real-World-Financial-Loan-Applications" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
       </div>
     </div>
 
