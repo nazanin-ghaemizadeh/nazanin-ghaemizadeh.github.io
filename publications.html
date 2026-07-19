@@ -121,6 +121,20 @@
     .hidden {
       display: none;
     }
+
+    /* ACCESS LINK (unified) */
+    .access-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .access-link i {
+      font-size: 12px;
+    }
   </style>
 </head>
 
@@ -146,51 +160,49 @@
       <div class="tab active" onclick="filter('all')">ALL</div>
       <div class="tab" onclick="filter('journal')">Journal Papers</div>
       <div class="tab" onclick="filter('book')">Book Chapter</div>
-      <div class="tab" onclick="filter('preprint')">Preprints</div>
       <div class="tab" onclick="filter('conference')">Conferences</div>
       <div class="tab" onclick="filter('working')">Working Papers</div>
 
-    </div>
-
-    <!-- PREPRINT -->
-    <div class="item preprint card">
-      <div class="title">Sustainable Multi-Objective Portfolio Optimization with Mean, Variance, and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach</div>
-      <div class="meta">Ghaemi-Zadeh, N., Habibi, M., & Seifbarghy, M. (2026)</div>
-      <a href="https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5481621" target="_blank">SSRN Preprint</a>
     </div>
 
     <!-- JOURNAL -->
     <div class="item journal card">
       <div class="title">Evaluation of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using D-CRITIC and Fuzzy MULTI-MOORA Techniques: A Real Case Study</div>
       <div class="meta">Ghaemi-Zadeh, N., & Eghbali-Zarch, M. (2024) — Expert Systems with Applications</div>
-      <a href="https://doi.org/10.1016/j.eswa.2024.123183" target="_blank">DOI Link</a>
+      <a class="access-link" href="https://doi.org/10.1016/j.eswa.2024.123183" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
     </div>
 
-    <!-- BOOK CHAPTER -->
+    <!-- BOOK CHAPTERS -->
     <div class="item book card">
-      <div class="title">Encyclopedia of Multi-Attribute Decision Making (MADM)</div>
-      <div class="meta">Invited contributor (2026) — Elsevier</div>
-      <a href="https://shop.elsevier.com/books/encyclopedia-of-multi-attribute-decision-making-madm/haseli/978-0-443-33275-3" target="_blank">Publisher</a>
+      <div class="title">IDOCRIW: Integrated Determination of Objective Criteria Weights for Multi-Attribute Decision-Making</div>
+      <div class="meta">Eghbalizarch, M., & Ghaemi-Zadeh, N. (2026) — In Encyclopedia of Multi-Attribute Decision Making (MADM) (pp. 289–303). Morgan Kaufmann/Elsevier</div>
+      <a class="access-link" href="https://doi.org/10.1016/B978-0-443-33275-3.00093-2" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
+    </div>
+
+    <div class="item book card">
+      <div class="title">MULTIMOORA: Multiobjective Optimization by Ratio Analysis Plus Full Multiplicative Form for Multi-Attribute Decision-Making</div>
+      <div class="meta">Eghbalizarch, M., & Ghaemi-Zadeh, N. (2026) — In Encyclopedia of Multi-Attribute Decision Making (MADM) (pp. 665–682). Morgan Kaufmann/Elsevier</div>
+      <a class="access-link" href="https://doi.org/10.1016/B978-0-443-33275-3.00005-1" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
     </div>
 
     <!-- WORKING PAPERS -->
     <div class="item working card">
       <div class="title">Kanban and Seven Types of Waste in Lean Production</div>
       <div class="meta">Solouki, S., Ghaemi-Zadeh, N., & Nasiri, G.R. (2022)</div>
-      <a href="https://www.researchgate.net/publication/360996874_Working_Paper_Kanban_and_Seven_Types_of_Waste_in_Lean_Production_Persian_Language" target="_blank">ResearchGate</a>
+      <a class="access-link" href="https://www.researchgate.net/publication/360996874_Working_Paper_Kanban_and_Seven_Types_of_Waste_in_Lean_Production_Persian_Language" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
     </div>
 
     <div class="item working card">
       <div class="title">Lean Production and Its Techniques</div>
-      <div class="meta">Solouki, S., Ghaemi-Zadeh, N., & Nasiri, G.R. (2022)</div>
-      <a href="https://www.researchgate.net/publication/357688941_Working_Paper_Lean_Production_and_Its_Techniques_Persian_Language" target="_blank">ResearchGate</a>
+      <div class="meta">Ghaemi-Zadeh, N., Solouki, S., & Nasiri, G.R. (2022)</div>
+      <a class="access-link" href="https://www.researchgate.net/publication/357688941_Working_Paper_Lean_Production_and_Its_Techniques_Persian_Language" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
     </div>
 
     <!-- CONFERENCE -->
     <div class="item conference card">
       <div class="title">Dynamic Assessment of Energy Internet's Emission Reduction Effect on the Supply Side</div>
       <div class="meta">Sami-Zadeh, R., Ghaemi-Zadeh, N., & Zandi, S. (2023) — 6th International Conference on Mechanical, Industrial and Aerospace Engineering</div>
-      <a href="https://www.researchgate.net/publication/370844971_Dynamic_Assessment_of_the_Energy_Internet's_Emission_Reduction_Effect_on_the_Supply_Side" target="_blank">Paper Link</a>
+      <a class="access-link" href="https://www.researchgate.net/publication/370844971_Dynamic_Assessment_of_the_Energy_Internet's_Emission_Reduction_Effect_on_the_Supply_Side" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Access</a>
     </div>
 
   </div>
