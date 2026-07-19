@@ -1,89 +1,352 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Blogs - Your Name</title>
-  <meta name="author" content="Your Name">
+  <meta charset="UTF-8">
+  <title>Blog | Nazanin Ghaemi-Zadeh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Writing by Your Name.">
-  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Blogs - Your Name">
-  <meta property="og:description" content="Writing by Your Name.">
-  <meta property="og:image" content="https://yourwebsite.com/figures/me.jpg">
-  <meta property="og:url" content="https://yourwebsite.com/blogs.html">
-  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Blogs - Your Name">
-  <meta name="twitter:description" content="Writing by Your Name.">
-  <meta name="twitter:image" content="https://yourwebsite.com/figures/me.jpg">
-
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="shared-styles.css">
-  <link rel="stylesheet" type="text/css" href="blog-styles.css">
-  <link rel="icon" type="image/png" href="figures/logo.png">
   <style>
-    .loading {
-      text-align: left;
-      padding: 20px 0;
-      color: #6b7280;
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(17, 24, 39, 0.6);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,0.08);
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0b0f19, #0f172a);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+      padding: 10px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(17, 24, 39, 0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    /* SECTION */
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* CATEGORY TABS */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .tab {
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.4);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      user-select: none;
+    }
+
+    .tab:hover {
+      border-color: rgba(96,165,250,0.4);
+      color: var(--text);
+    }
+
+    .tab.active {
+      background: rgba(96,165,250,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      transition: 0.2s ease;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(96,165,250,0.4);
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .thumb {
+      flex-shrink: 0;
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .thumb svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.25);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .authors {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .meta .journal {
+      color: var(--text);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ACCESS LINK (unified) */
+    .access-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .access-link i {
+      font-size: 12px;
+    }
   </style>
 </head>
 
 <body>
-  <div id="site-nav"></div>
 
-  <main id="main-content" class="main-content-wrapper page-shell">
-    <!-- Page Title -->
-    <div>
-      <h1 class="page-title">Blogs</h1>
+<div class="container">
+
+  <!-- NAV -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="blogs.html">Blog</a>
+  </div>
+
+  <!-- SECTION -->
+  <div class="section">
+    <h2>Blog</h2>
+
+    <!-- CATEGORY TABS -->
+    <div class="tabs">
+      <div class="tab active" data-filter="all">All</div>
+      <div class="tab" data-filter="dcm">Discrete Choice Models</div>
+      <div class="tab" data-filter="ml">Machine Learning</div>
+      <div class="tab" data-filter="sd">Systems Dynamics</div>
     </div>
 
-    <!-- Blog Posts -->
-    <div style="margin-bottom:40px;">
-      <ul id="blog-posts-container">
-        <li class="loading">Loading blog posts...</li>
-      </ul>
+    <!-- Discrete Choice Models -->
+    <div class="card" data-category="dcm">
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <!-- decision point -->
+          <circle cx="20" cy="50" r="6" fill="#60a5fa"/>
+          <!-- branching paths to three discrete alternatives -->
+          <path d="M20 50 C34 50 30 22 48 22" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <path d="M20 50 L58 50" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+          <path d="M20 50 C34 50 30 78 48 78" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <!-- alternative A: rejected -->
+          <rect x="48" y="14" width="16" height="16" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <path d="M52 18 L60 26 M60 18 L52 26" stroke="rgba(255,255,255,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+          <!-- alternative B: chosen -->
+          <rect x="58" y="40" width="20" height="20" rx="5" fill="#60a5fa" fill-opacity="0.18" stroke="#60a5fa" stroke-width="2.5"/>
+          <path d="M64 50 L69 55 L77 45" fill="none" stroke="#60a5fa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- alternative C: rejected -->
+          <rect x="48" y="70" width="16" height="16" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <path d="M52 74 L60 82 M60 74 L52 82" stroke="rgba(255,255,255,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+          <!-- utility bars representing the learned representation -->
+          <rect x="84" y="46" width="4" height="10" fill="#60a5fa" fill-opacity="0.7"/>
+          <rect x="90" y="42" width="4" height="14" fill="#60a5fa"/>
+        </svg>
+      </div>
+      <div class="content">
+        <div class="category-tag">Discrete Choice Models</div>
+        <div class="title">Enhancing discrete choice models with representation learning</div>
+        <div class="authors">Brian Sifringer, Virginie Lurkin, Alexandre Alahi</div>
+        <div class="meta"><span class="journal">Transportation Research Part B: Methodological</span> · 2020</div>
+        <a class="access-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0191261520303830" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Read</a>
+      </div>
     </div>
-  </main>
 
-  <div id="site-footer"></div>
+    <!-- Machine Learning -->
+    <div class="card" data-category="ml">
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <!-- body silhouette scaling from lean to higher BMI -->
+          <circle cx="26" cy="26" r="7" fill="rgba(255,255,255,0.22)"/>
+          <path d="M17 62 Q17 40 26 40 Q35 40 35 62 Z" fill="rgba(255,255,255,0.22)"/>
+          <circle cx="58" cy="24" r="8" fill="#60a5fa" fill-opacity="0.55"/>
+          <path d="M46 66 Q46 40 58 40 Q70 40 70 66 Z" fill="#60a5fa" fill-opacity="0.55"/>
+          <!-- risk gauge / dial -->
+          <path d="M76 78 A16 16 0 0 1 96 78" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M76 78 A16 16 0 0 1 90 64" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="86" cy="78" r="2.4" fill="#60a5fa"/>
+          <line x1="86" y1="78" x2="91" y2="70" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+          <!-- scan / prediction line across the bodies -->
+          <line x1="10" y1="50" x2="94" y2="50" stroke="#60a5fa" stroke-width="1.4" stroke-dasharray="2 3" stroke-opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="content">
+        <div class="category-tag">Machine Learning</div>
+        <div class="title">Visualization obesity risk prediction system based on machine learning</div>
+        <div class="authors">Jinsong Du, Sijia Yang, Yijun Zeng, Chunhong Ye, Xiao Chang, Shan Wu</div>
+        <div class="meta"><span class="journal">Scientific Reports</span> · 2024</div>
+        <a class="access-link" href="https://www.nature.com/articles/s41598-024-73826-6" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Read</a>
+      </div>
+    </div>
 
-  <!-- Load JavaScript files -->
-  <script src="site-shell.js"></script>
-  <script src="utils.js"></script>
-  <script src="vendor/marked.umd.js"></script>
-  <script src="blog-data.js"></script>
-  <script src="blog-manager.js"></script>
-  <script>
-    // Initialize blog when page loads
-    document.addEventListener('DOMContentLoaded', async function() {
-      try {
-        await blogManager.loadPosts();
-        blogManager.renderBlogList();
-      } catch (error) {
-        console.error('Error loading blog posts:', error);
-        document.getElementById('blog-posts-container').innerHTML = `
-          <li class="coming-soon">
-            <h2>Coming Soon!</h2>
-            <p>Blog posts will appear here once you add them in <code>blog-data.js</code>.</p>
-          </li>
-        `;
-      }
+    <!-- Systems Dynamics -->
+    <div class="card" data-category="sd">
+      <div class="thumb">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#0f172a"/>
+          <!-- power pylon representing the energy grid -->
+          <path d="M50 16 L34 84 M50 16 L66 84" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <path d="M40 34 L60 34 M37 50 L63 50 M34 66 L66 66" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.6"/>
+          <path d="M50 16 L38 30 M50 16 L62 30" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.6"/>
+          <!-- lightning bolt: energy internet -->
+          <path d="M53 26 L45 46 L52 46 L46 62 L62 38 L54 38 Z" fill="#60a5fa"/>
+          <!-- downward emission-reduction arrow -->
+          <path d="M78 26 L78 54 M70 46 L78 54 L86 46" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- CO2 tag being reduced -->
+          <text x="70" y="70" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#60a5fa" fill-opacity="0.85">CO₂</text>
+        </svg>
+      </div>
+      <div class="content">
+        <div class="category-tag">Systems Dynamics</div>
+        <div class="title">Dynamic assessment of Energy Internet's emission reduction effect -- a case study of Yanqing, Beijing</div>
+        <div class="authors">Shu-Xia Yang, Chun-Xu Zhu, Li Qiao, Yuan-Ying Chi</div>
+        <div class="meta"><span class="journal">Journal of Cleaner Production</span> · 2020, Vol. 272, Article 122663</div>
+        <a class="access-link" href="https://www.sciencedirect.com/journal/journal-of-cleaner-production/vol/272/suppl/C" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Read</a>
+      </div>
+    </div>
 
-      // Initialize dark mode toggle (uses utils.js with sun/moon icons)
-      initializeDarkMode();
+  </div>
+</div>
 
-      // Initialize back to top button
-      initializeBackToTop();
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const cards = document.querySelectorAll('.card[data-category]');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     });
+  });
+</script>
 
-    // Dark mode functions are loaded from utils.js
-  </script>
 </body>
-
 </html>
