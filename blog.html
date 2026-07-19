@@ -75,34 +75,61 @@
 
     /* CATEGORY TABS */
     .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
     }
 
     .tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       border: 1px solid var(--border);
-      background: rgba(17, 24, 39, 0.4);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 16px 18px;
+      border-radius: 14px;
       cursor: pointer;
       transition: 0.2s ease;
       user-select: none;
     }
 
     .tab:hover {
+      transform: translateY(-2px);
       border-color: rgba(96,165,250,0.4);
-      color: var(--text);
     }
 
     .tab.active {
       background: rgba(96,165,250,0.15);
       border-color: var(--accent);
       color: var(--accent);
+    }
+
+    .tab .count {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      padding: 2px 9px;
+    }
+
+    .tab.active .count {
+      color: var(--accent);
+      background: rgba(96,165,250,0.15);
+    }
+
+    /* ARTICLES CONTAINER */
+    .articles {
+      display: none;
+    }
+
+    .articles.visible {
+      display: block;
     }
 
     /* CARDS */
@@ -230,11 +257,14 @@
 
     <!-- CATEGORY TABS -->
     <div class="tabs">
-      <div class="tab active" data-filter="all">All</div>
-      <div class="tab" data-filter="dcm">Discrete Choice Models</div>
-      <div class="tab" data-filter="ml">Machine Learning</div>
-      <div class="tab" data-filter="sd">Systems Dynamics</div>
+      <div class="tab" data-filter="dcm">Discrete Choice Models <span class="count">1</span></div>
+      <div class="tab" data-filter="ml">Machine Learning <span class="count">1</span></div>
+      <div class="tab" data-filter="sd">Systems Dynamics <span class="count">1</span></div>
+      <div class="tab" data-filter="all">All <span class="count">3</span></div>
     </div>
+
+    <!-- ARTICLES -->
+    <div class="articles">
 
     <!-- Discrete Choice Models -->
     <div class="card" data-category="dcm">
@@ -319,9 +349,11 @@
         <div class="category-tag">Systems Dynamics</div>
         <div class="title">Dynamic assessment of Energy Internet's emission reduction effect -- a case study of Yanqing, Beijing</div>
         <div class="authors">Shu-Xia Yang, Chun-Xu Zhu, Li Qiao, Yuan-Ying Chi</div>
-        <div class="meta"><span class="journal">Journal of Cleaner Production </div>
+        <div class="meta"><span class="journal">Journal of Cleaner Production</span> · 2020</div>
         <a class="access-link" href="https://www.sciencedirect.com/journal/journal-of-cleaner-production/vol/272/suppl/C" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Read</a>
       </div>
+    </div>
+
     </div>
 
   </div>
@@ -330,11 +362,22 @@
 <script>
   const tabs = document.querySelectorAll('.tab');
   const cards = document.querySelectorAll('.card[data-category]');
+  const articlesWrap = document.querySelector('.articles');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      const alreadyActive = tab.classList.contains('active');
+
       tabs.forEach(t => t.classList.remove('active'));
+
+      // clicking the same active category again collapses the list
+      if (alreadyActive) {
+        articlesWrap.classList.remove('visible');
+        return;
+      }
+
       tab.classList.add('active');
+      articlesWrap.classList.add('visible');
 
       const filter = tab.dataset.filter;
       cards.forEach(card => {
@@ -344,6 +387,8 @@
           card.classList.add('hidden');
         }
       });
+
+      articlesWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   });
 </script>
