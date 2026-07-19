@@ -133,11 +133,39 @@
       padding: 18px 20px;
       margin-bottom: 12px;
       transition: 0.2s ease;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
 
     .card:hover {
       transform: translateY(-2px);
       border-color: rgba(96,165,250,0.4);
+    }
+
+    .org-logo {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .org-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
     }
 
     .title {
@@ -173,6 +201,12 @@
 
       .icon-links {
         justify-content: center;
+      }
+
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
     }
   </style>
@@ -265,32 +299,52 @@
     <h2>Education</h2>
 
     <div class="card">
-      <div class="title">Sharif University of Technology — Ph.D.</div>
-      <div class="meta">Sep 2025 – Present | Industrial Engineering, Systems Optimization</div>
-    </div>
-
-    <div class="card">
-      <div class="title">Sharif University of Technology — M.Sc.</div>
-      <div class="meta">Sep 2023 – Sep 2025 | Industrial Engineering, Engineering Management</div>
-      <div class="meta thesis">
-        Thesis: “Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach”
+      <div class="org-logo">
+        <img src="logos/sharif.png" alt="Sharif University of Technology" onerror="this.closest('.org-logo').style.display='none'">
       </div>
-      <div class="meta">GPA: 4.00/4.00 (18.91/20)</div>
-    </div>
-
-    <div class="card">
-      <div class="title">Alzahra University — B.Sc.</div>
-      <div class="meta">Feb 2019 – Jan 2023 | Industrial Engineering</div>
-      <div class="meta thesis">
-        Thesis: “Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques”
+      <div class="card-body">
+        <div class="title">Sharif University of Technology — Ph.D.</div>
+        <div class="meta">Sep 2025 – Present | Industrial Engineering, Systems Optimization</div>
       </div>
-      <div class="meta">GPA: 3.94/4.00 (19.09/20)</div>
     </div>
 
     <div class="card">
-      <div class="title">Roshangaran High School — Diploma</div>
-      <div class="meta">Sep 2014 – May 2018 | Mathematics & Physics</div>
-      <div class="meta">GPA: 4.00/4.00 (19.84/20)</div>
+      <div class="org-logo">
+        <img src="logos/sharif.png" alt="Sharif University of Technology" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Sharif University of Technology — M.Sc.</div>
+        <div class="meta">Sep 2023 – Sep 2025 | Industrial Engineering, Engineering Management</div>
+        <div class="meta thesis">
+          Thesis: "Sustainable Multi-Objective Portfolio Optimization with Mean, Variance and Return Entropy: An Iterative Intuitionistic Fuzzy Linear Programming Approach"
+        </div>
+        <div class="meta">GPA: 4.00/4.00 (18.91/20)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="org-logo">
+        <img src="logos/alzahra.png" alt="Alzahra University" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Alzahra University — B.Sc.</div>
+        <div class="meta">Feb 2019 – Jan 2023 | Industrial Engineering</div>
+        <div class="meta thesis">
+          Thesis: "Ranking of Business Strategies Based on the Financial Performance of the Corporation and Investors' Behavior Using Multi-Criteria Decision-Making Techniques"
+        </div>
+        <div class="meta">GPA: 3.94/4.00 (19.09/20)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="org-logo">
+        <img src="logos/roshangaran.png" alt="Roshangaran High School" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Roshangaran High School — Diploma</div>
+        <div class="meta">Sep 2014 – May 2018 | Mathematics & Physics</div>
+        <div class="meta">GPA: 4.00/4.00 (19.84/20)</div>
+      </div>
     </div>
 
   </div>
@@ -299,51 +353,86 @@
     <h2>Experience</h2>
 
     <div class="card">
-      <div class="title">Research and Development Specialist</div>
-      <div class="meta">Kerman Motor, Tehran, Iran</div>
-      <div class="meta">2026 – Present</div>
+      <div class="org-logo">
+        <img src="logos/kerman-motor.png" alt="Kerman Motor" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Research and Development Specialist</div>
+        <div class="meta">Kerman Motor, Tehran, Iran</div>
+        <div class="meta">2026 – Present</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Academic Peer Reviewer</div>
-      <div class="meta">Elsevier, Amsterdam, Netherlands</div>
-      <div class="meta">2025 – Present</div>
-      <div class="meta thesis">Journals: Applied Soft Computing, Decision Analytics Journal, Expert Systems with Applications</div>
+      <div class="org-logo">
+        <img src="logos/elsevier.png" alt="Elsevier" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Academic Peer Reviewer</div>
+        <div class="meta">Elsevier, Amsterdam, Netherlands</div>
+        <div class="meta">2025 – Present</div>
+        <div class="meta thesis">Journals: Applied Soft Computing, Decision Analytics Journal, Expert Systems with Applications</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Teaching Assistant</div>
-      <div class="meta">Sharif University of Technology, Tehran, Iran</div>
-      <div class="meta">2023 – Present</div>
-      <div class="meta thesis">Courses: Operations Analytics, Information Technology, Project Control</div>
+      <div class="org-logo">
+        <img src="logos/sharif.png" alt="Sharif University of Technology" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Teaching Assistant</div>
+        <div class="meta">Sharif University of Technology, Tehran, Iran</div>
+        <div class="meta">2023 – Present</div>
+        <div class="meta thesis">Courses: Operations Analytics, Information Technology, Project Control</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Teaching Assistant</div>
-      <div class="meta">Alzahra University, Tehran, Iran</div>
-      <div class="meta">2021 – 2023</div>
-      <div class="meta thesis">Courses: Project Management and Control, Production Planning and Control</div>
+      <div class="org-logo">
+        <img src="logos/alzahra.png" alt="Alzahra University" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Teaching Assistant</div>
+        <div class="meta">Alzahra University, Tehran, Iran</div>
+        <div class="meta">2021 – 2023</div>
+        <div class="meta thesis">Courses: Project Management and Control, Production Planning and Control</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Customer Affairs and Branch Operations</div>
-      <div class="meta">Ayandeh Bank Brokerage, Tehran, Iran</div>
-      <div class="meta">2022</div>
-      <div class="meta thesis">Undergraduate Internship</div>
+      <div class="org-logo">
+        <img src="logos/ayandeh-bank.png" alt="Ayandeh Bank Brokerage" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Customer Affairs and Branch Operations</div>
+        <div class="meta">Ayandeh Bank Brokerage, Tehran, Iran</div>
+        <div class="meta">2022</div>
+        <div class="meta thesis">Undergraduate Internship</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Entrance Exam Support Instructor</div>
-      <div class="meta">Roshangar Vocational High School, Tehran, Iran</div>
-      <div class="meta">2018 – 2020</div>
-      <div class="meta thesis">Subjects: Math, Arabic</div>
+      <div class="org-logo">
+        <img src="logos/roshangar-vocational.png" alt="Roshangar Vocational High School" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Entrance Exam Support Instructor</div>
+        <div class="meta">Roshangar Vocational High School, Tehran, Iran</div>
+        <div class="meta">2018 – 2020</div>
+        <div class="meta thesis">Subjects: Math, Arabic</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="title">Entrance Exam Support Instructor</div>
-      <div class="meta">Roshangaran High School, Tehran, Iran</div>
-      <div class="meta">2018 – 2020</div>
-      <div class="meta thesis">Subjects: Geometry, Physics</div>
+      <div class="org-logo">
+        <img src="logos/roshangaran.png" alt="Roshangaran High School" onerror="this.closest('.org-logo').style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="title">Entrance Exam Support Instructor</div>
+        <div class="meta">Roshangaran High School, Tehran, Iran</div>
+        <div class="meta">2018 – 2020</div>
+        <div class="meta thesis">Subjects: Geometry, Physics</div>
+      </div>
     </div>
 
   </div>
